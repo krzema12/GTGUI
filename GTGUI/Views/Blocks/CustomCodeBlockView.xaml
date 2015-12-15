@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="GTGUI.Views.Blocks.CustomCodeBlockView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GTGUI.Views.Blocks"
+             xmlns:gtgui="clr-namespace:GTGUI"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+             mc:Ignorable="d" Width="249" Height="217">
+    <Grid>
+        <local:BlockView />
+
+        <Label Content="Run custom code:" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top"/>
+        <Border Margin="10,30,10,10" BorderBrush="Black" BorderThickness="1">
+            <avalonEdit:TextEditor Name="Code" FontFamily="Consolas" SyntaxHighlighting="C#" FontSize="10pt" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" ShowLineNumbers="True">
+                <i:Interaction.Behaviors>
+                    <gtgui:AvalonEditBehavior GiveMeTheText="{Binding Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </i:Interaction.Behaviors>
+            </avalonEdit:TextEditor>
+        </Border>
+    </Grid>
+</UserControl>

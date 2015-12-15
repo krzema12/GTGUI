@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="GTGUI.Views.Blocks.ConditionalBlockView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GTGUI.Views.Blocks"
+             xmlns:cal="http://www.caliburnproject.org"
+             xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+             mc:Ignorable="d" Height="61.5" Width="274">
+    <Grid>
+        <local:BlockView />
+        <local:TerminalView x:Name="IfTrue" HorizontalAlignment="Right" Width="15" Height="15" dd:DragDrop.IsDragSource="True" cal:Message.Attach="[Event MouseLeftButtonDown] = [Action EndTerminal($eventArgs)]" VerticalAlignment="Center" Margin="0,0,-15,0" />
+        <Label Content="If true" Margin="42,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="42"/>
+        <TextBox x:Name="Condition" Height="23" Margin="89,10,63,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontSize="16"/>
+        <Label Content="go here" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,7,0" />
+        <Label Content="else, go there" HorizontalAlignment="Center" Margin="80,0,80,3" VerticalAlignment="Bottom"/>
+
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Margin="9,8,0,8" HorizontalAlignment="Left" Width="40">
+            <Canvas Name="svg2" Width="295" Height="351">
+                <Canvas.Resources/>
+                <!--Unknown tag: sodipodi:namedview-->
+                <!--Unknown tag: metadata-->
+                <Canvas Name="layer1">
+                    <Canvas.RenderTransform>
+                        <TranslateTransform X="-153.25" Y="-172.09375"/>
+                    </Canvas.RenderTransform>
+                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path2985" Fill="#FFFF4040">
+                        <Path.Data>
+                            <PathGeometry Figures="m 284.65625 172.09375 c 0 0 4.73781 77.84655 -44.125 112.125 -48.40349 33.95621 -36.01992 91.05014 -37.78125 128.1875 l -49.5 0 31.96875 55.375 31.96875 55.34375 31.96875 -55.34375 31.9375 -55.375 -46.53125 0 c 0.19752 -51.88295 -0.92105 -77.58895 39 -103.875 49.36539 -32.50472 43.375 -136.21875 43.375 -136.21875 l -32.28125 -0.21875 z" FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path29854" Fill="#FF40FF40">
+                        <Path.Data>
+                            <PathGeometry Figures="m 317.12956 172.13889 c 0 0 -4.73779 77.84656 44.12501 112.12501 48.4035 33.95621 36.01993 91.05014 37.78128 128.1875 l 49.49999 0 -31.96876 55.375 -31.96875 55.34375 -31.96876 -55.34375 -31.9375 -55.375 46.53125 0 c -0.19751 -51.88295 0.92106 -77.58895 -39 -103.875 -49.36539 -32.50472 -43.37499 -136.21876 -43.37499 -136.21876 l 32.28123 -0.21875 z" FillRule="NonZero"/>
+                        </Path.Data>
+                    </Path>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</UserControl>

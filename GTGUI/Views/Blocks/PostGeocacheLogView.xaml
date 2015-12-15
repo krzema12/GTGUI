@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="GTGUI.Views.Blocks.PostGeocacheLogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GTGUI.Views.Blocks"
+             mc:Ignorable="d" Width="210.5" Height="252.333">
+    <Grid>
+        <local:BlockView />
+        <Label Content="Log a geocache" HorizontalAlignment="Left" Margin="65,3,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox Name="GeocacheExpression" Height="24" Margin="72,32,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontSize="16"/>
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Margin="9,8,0,0" HorizontalAlignment="Left" Width="48" Height="49" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Canvas Name="svg2" Width="91" Height="95">
+                <Canvas.Resources/>
+                <!--Unknown tag: sodipodi:namedview-->
+                <!--Unknown tag: metadata-->
+                <Canvas Name="layer1">
+                    <Canvas.RenderTransform>
+                        <TranslateTransform X="-319.98985" Y="-509.1479"/>
+                    </Canvas.RenderTransform>
+                    <Canvas Name="g3812">
+                        <Canvas Name="g3773">
+                            <Canvas.RenderTransform>
+                                <TranslateTransform X="183.51412" Y="250.03674"/>
+                            </Canvas.RenderTransform>
+                            <Canvas Name="g4087">
+                                <Canvas.RenderTransform>
+                                    <MatrixTransform Matrix="1.3477847 0 0 1.3477847 -73.877058 -127.08339"/>
+                                </Canvas.RenderTransform>
+                                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="rect4094" Fill="#FF000000">
+                                    <Path.Data>
+                                        <PathGeometry Figures="m 188.03717 309.31571 -3.46066 15.16801 -0.29453 0 -0.0491 0 0 0.0246 -10.62742 5.93957 -0.0491 0 0 0.0245 0 26.75264 46.60849 0 0 -0.17181 3.77973 -9.74385 0 -22.82564 -0.31906 0 -1.66898 -15.16801 -33.91939 0 z m 1.88986 2.08622 29.64879 0 1.47263 13.08179 -33.67396 0 2.55254 -13.08179 z m -3.14159 15.87977 33.87031 0 c -1.04197 1.4363 -1.78948 2.45474 -2.30711 3.16614 l -31.5632 0 0 -3.11705 0.0245 -0.0245 -0.0245 -0.0246 z m -2.55255 1.64443 0 1.52171 -2.42982 0 2.42982 -1.52171 z m 37.35552 1.49717 0 13.8181 -1.42354 3.28886 0 -15.04529 1.42354 -2.06167 z m -45.06224 3.28885 0.0246 0.0245 0.0491 -0.0245 40.79164 0 0 20.22401 -40.86527 0 0 -20.22401 z" FillRule="nonzero"/>
+                                    </Path.Data>
+                                </Path>
+                            </Canvas>
+                        </Canvas>
+                    </Canvas>
+                </Canvas>
+            </Canvas>
+        </Viewbox>
+        <ComboBox x:Name="LogTypes" HorizontalAlignment="Left" Margin="72,0,0,73" Width="128" Height="22" VerticalAlignment="Bottom"/>
+        <Label Content="Client:" HorizontalAlignment="Left" Margin="24,0,0,12" VerticalAlignment="Bottom" Width="68"/>
+        <TextBox x:Name="ClientVariableName" Height="24" Margin="72,0,10,12" VerticalAlignment="Bottom" FontFamily="Courier New" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="Comment" Height="68" Margin="10,80,10,0" VerticalAlignment="Top" FontFamily="Courier New" FontWeight="Bold" FontSize="16" TextWrapping="Wrap" AcceptsReturn="True"/>
+        <Label Content="Comment:" HorizontalAlignment="Left" Margin="15,54,0,0" VerticalAlignment="Top" Width="68"/>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="29,0,0,42" Width="68" Height="26" VerticalAlignment="Bottom"/>
+        <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="72,0,0,41" Width="128" Height="24" VerticalAlignment="Bottom"/>
+        <Label Content="Log type:" HorizontalAlignment="Left" Margin="8,0,0,70" VerticalAlignment="Bottom" Width="68"/>
+    </Grid>
+</UserControl>
+

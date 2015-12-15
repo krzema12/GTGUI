@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="GTGUI.Views.CanvasView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dd="clr-namespace:GongSolutions.Wpf.DragDrop;assembly=GongSolutions.Wpf.DragDrop"
+             xmlns:local="clr-namespace:GTGUI"
+             xmlns:cal="http://www.caliburnproject.org"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Background="White" ClipToBounds="True">
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="0.01" ScaleY="0.01"/>
+                        <ScaleTransform CenterX="0.0" CenterY="0.0" ScaleX="{Binding ElementName=ScaleSlider, Path=Value}" ScaleY="{Binding ElementName=ScaleSlider, Path=Value}" />
+                    </TransformGroup>
+                </Grid.LayoutTransform>
+                <Canvas Width="5000" Height="5000">
+                    <Canvas.Background>
+                        <VisualBrush TileMode="Tile" Viewport="0,0,10,10" ViewportUnits="Absolute" Viewbox="0,0,10,10" ViewboxUnits="Absolute">
+                            <VisualBrush.Visual>
+                                <Canvas>
+                                    <Path Stroke="#BBBBBB" Data="M 0 0 l 0 10" />
+                                    <Path Stroke="#BBBBBB" Data="M 0 10 l 32 0" />
+                                </Canvas>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </Canvas.Background>
+                </Canvas>
+                <Canvas x:Name="BlocksCanvas" Width="5000" Height="5000" dd:DragDrop.IsDropTarget="True" dd:DragDrop.DropHandler="{Binding}" Background="Transparent" cal:Message.Attach="[Event MouseMove] = [Action MouseMove($eventArgs)]">
+                    <Canvas.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" RenderingBias="Quality" ShadowDepth="2" />
+                    </Canvas.Effect>
+                    <ItemsControl Name="ListOfBlocks" dd:DragDrop.IsDragSource="True" dd:DragDrop.DragHandler="{Binding}" dd:DragDrop.IsDropTarget="True" dd:DragDrop.DropHandler="{Binding}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemContainerStyle>
+                            <Style TargetType="ContentPresenter">
+                                <Setter Property="Canvas.Left" Value="{Binding Path=Left}" />
+                                <Setter Property="Canvas.Top" Value="{Binding Path=Top}" />
+                            </Style>
+                        </ItemsControl.ItemContainerStyle>
+                    </ItemsControl>
+                </Canvas>
+
+                <Canvas Width="5000" Height="5000" Background="Transparent" IsHitTestVisible="False">
+                    <ItemsControl Name="Connections">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Canvas />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+
+                </Canvas>
+            </Grid>
+        </ScrollViewer>
+        <Rectangle Fill="#FFD8D8D8" Height="32" Canvas.Left="98" Stroke="Black" Canvas.Top="227" Width="250" RadiusX="5" RadiusY="5" StrokeThickness="0" Margin="0,0,20,20" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        <Slider Name="ScaleSlider" Margin="0,0,25,25" HorizontalAlignment="Right" Width="200" Height="23" VerticalAlignment="Bottom" Minimum="10" Value="100" Maximum="800" SmallChange="1" IsSnapToTickEnabled="True"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,0,230,28" TextWrapping="Wrap" Height="16" VerticalAlignment="Bottom">
+            <Run Text="{Binding ElementName=ScaleSlider, Path=Value}" />
+            <Run Text="%" />
+        </TextBlock>
+    </Grid>
+</UserControl>

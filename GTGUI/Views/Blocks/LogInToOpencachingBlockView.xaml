@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="GTGUI.Views.Blocks.LogInToOpencachingBlockView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GTGUI.Views.Blocks"
+             mc:Ignorable="d" Width="210.5" Height="139.667">
+    <Grid>
+        <local:BlockView />
+        <Label Content="Log in to" HorizontalAlignment="Left" Margin="72,5,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label Content="Opencaching" HorizontalAlignment="Left" Margin="72,23,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Margin="29,10,0,0" HorizontalAlignment="Left" Width="38" Height="38" VerticalAlignment="Top">
+            <Canvas Name="Layer_1" Width="171" Height="171" Canvas.Left="0" Canvas.Top="0">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0"/>
+                </Canvas.RenderTransform>
+                <Canvas.Resources/>
+                <!--Unknown tag: metadata-->
+                <!--Unknown tag: sodipodi:namedview-->
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path3" Fill="#000000">
+                    <Path.Data>
+                        <PathGeometry Figures="m 30.76732 89.32868 c 13.536 -2.088 29.304 -5.328 45.576 -9.144 -3.96 -14.904 -8.424 -29.592 -13.536 -44.208 6.48 -0.864 12.816 -2.232 18.864 -4.68 2.376 15.192 5.256 30.312 8.855997 45.36 18.575993 -4.752 37.007993 -10.08 52.775993 -15.336 l 21.312 -6.696 c 1.296 3.384 2.448 6.84 3.312 10.44 11.376 45.576 -16.488 92.016 -61.992 103.392 -45.57599 11.376 -92.01599 -16.488 -103.3919903 -62.064 -11.376 -45.504 16.4880003 -91.944 62.0640003 -103.32 36.79199 -9.144 74.23199 7.272 93.23999 38.016 l -18.864 4.68 c -15.912 -25.56 -44.423989 -39.672 -71.92799 -32.76 -35.136 8.784 -55.656 48.6 -45.648 88.704 10.008 40.104 46.872 65.592 82.00799 56.808 32.688 -8.136 52.704 -43.128 47.376 -80.208 -16.92 2.88 -36.936 7.272 -56.807989 12.456 3.96 14.976 8.495989 29.88 13.751989 44.712 -6.696 0.288 -12.887989 2.16 -18.93599 4.752 -2.376 -15.408 -5.328 -30.672 -8.928 -45.72 -15.984 4.392 -31.392 9.144 -44.352 13.68 -0.216 -6.624 -2.088 -12.816 -4.752 -18.864 z" FillRule="evenodd"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+
+        <ComboBox Name="Services" HorizontalAlignment="Left" Margin="92,0,0,39" VerticalAlignment="Bottom" Width="108"/>
+        <Label Content="Service:" HorizontalAlignment="Left" Margin="35,0,0,37" Height="26" VerticalAlignment="Bottom"/>
+        <Label Content="Variable:" HorizontalAlignment="Left" Margin="30,0,0,10" VerticalAlignment="Bottom" Width="59"/>
+        <TextBox x:Name="TargetVariableName" Height="24" Margin="92,0,10,10" VerticalAlignment="Bottom" FontFamily="Courier New" FontWeight="Bold" FontSize="16"/>
+        <Label Content="Current user:" HorizontalAlignment="Left" Margin="8,0,0,62" Height="26" VerticalAlignment="Bottom"/>
+        <Label x:Name="CurrentUserName" HorizontalAlignment="Left" Margin="89,0,0,62" Height="26" VerticalAlignment="Bottom" FontWeight="Bold"/>
+    </Grid>
+</UserControl>
+
+
