@@ -43,11 +43,29 @@
     <Reference Include="Common.Logging">
       <HintPath>..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="GeocachingToolbox">
+      <HintPath>..\packages\GeocachingToolbox.0.1.0.0\lib\net45\GeocachingToolbox.dll</HintPath>
+    </Reference>
     <Reference Include="GongSolutions.Wpf.DragDrop">
       <HintPath>..\packages\gong-wpf-dragdrop.0.1.4.3\lib\net40\GongSolutions.Wpf.DragDrop.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.AvalonEdit">
       <HintPath>..\packages\AvalonEdit.5.0.2\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.7.0\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\packages\Machine.Specifications.0.7.0\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\packages\Machine.Specifications.Should.0.7.2\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="Roslyn.Compilers">
       <HintPath>..\packages\Roslyn.Compilers.Common.1.2.20906.2\lib\net45\Roslyn.Compilers.dll</HintPath>
